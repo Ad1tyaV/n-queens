@@ -7,8 +7,8 @@ function generateTable() {
     let n = Number(document.getElementById('n-number').value);    
 
     if(n<=0)    n = 10;
-    if(n>13)    n = 13;
-    
+    if(n>11)    n = 11;
+
     if(cache.has(n)) {
         populateRandomSolution(n);
         return;

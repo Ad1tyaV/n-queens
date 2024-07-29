@@ -6,13 +6,14 @@ function generateTable() {
     const container = document.getElementById('table-container');    
     let n = Number(document.getElementById('n-number').value);    
 
+    if(n<=0)    n = 10;
+    if(n>13)    n = 13;
+    
     if(cache.has(n)) {
         populateRandomSolution(n);
         return;
     }
-    solutions = [];
-    if(n<=0)    n = 10;
-    if(n>13)    n = 13;
+    solutions = [];    
     container.innerHTML = "";
     const table = document.createElement('table');        
 

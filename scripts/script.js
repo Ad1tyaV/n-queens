@@ -4,16 +4,16 @@ cache = new Map();
 function generateTable() {
 
     const container = document.getElementById('table-container');    
+    document.getElementById('sol-msg').style.display = "none";
     let n = Number(document.getElementById('n-number').value);    
 
     if(n<=0)    n = 10;
     if(n>11)    n = 11;
 
-    if(cache.has(n)) {
-        populateRandomSolution(n);
-        return;
+    if(!cache.has(n)) {
+        solutions = [];
     }
-    solutions = [];    
+
     container.innerHTML = "";
     const table = document.createElement('table');        
 
@@ -35,8 +35,11 @@ function generateTable() {
     populateRandomSolution(n);
 }
 
-function populateRandomSolution(n) {
+function populateRandomSolution(n) { 
+    solutions = cache.get(n);
     let totalSolutions = solutions.length;
+    document.getElementById('sol-msg').innerText=`Number of solutions for n=${n} are ${totalSolutions}`;
+    document.getElementById('sol-msg').style.display = "block";
     let ran = Math.floor(Math.random() * totalSolutions);    
     let sub = solutions[ran];    
 

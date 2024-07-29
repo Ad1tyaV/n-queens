@@ -17,6 +17,13 @@ body {
     flex-grow: 1;
 }
 
+#sol-msg {
+    text-align: center;
+    margin-top: 2.5%;
+    display: none;
+    font-weight: bold;
+}
+
 #label-n {
     display: flex;
     flex-direction: column;
@@ -50,7 +57,7 @@ td {
 }
 
 .queen {
-    background-color: rgb(236, 70, 70);
+    background-color: rgb(236, 70, 70);    
 }
 
 .not-queen {

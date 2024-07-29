@@ -12,7 +12,7 @@ function generateTable() {
     }
     solutions = [];
     if(n<=0)    n = 10;
-    if(n>30)    n = 30;
+    if(n>13)    n = 13;
     container.innerHTML = "";
     const table = document.createElement('table');        
 
